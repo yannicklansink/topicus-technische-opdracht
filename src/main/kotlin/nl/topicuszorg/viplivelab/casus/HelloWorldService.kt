@@ -5,8 +5,9 @@ import org.springframework.stereotype.Service
 @Service
 class HelloWorldService
 {
-    fun sayHello(naam: String): String
+    fun sayHello(naam: String, hoofdletters: Boolean): String
     {
-        return ("Hello, $naam")
+        val antwoord = "Hello, $naam"
+        return if (hoofdletters) antwoord.uppercase() else antwoord
     }
 }
