@@ -6,4 +6,6 @@ http://localhost:8080/swagger-ui/index.html
 
 "startTime": "2025-12-11T15:30:00"
 
+om de testen te runnen: .\mvnw test 
+soms helpt het om de target te legen: .\mvnw clean test
 
