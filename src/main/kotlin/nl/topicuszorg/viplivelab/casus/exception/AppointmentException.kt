@@ -1,9 +1,18 @@
 package nl.topicuszorg.viplivelab.casus.exception
 
-class AppointmentNotFoundException(message: String) : RuntimeException(message)
+sealed class AppointmentException(
+    val errorCode: String,
+    message: String
+) : RuntimeException(message)
 
-class AppointmentValidationException(message: String) : RuntimeException(message)
+class AppointmentNotFoundException(message: String)
+    : AppointmentException("APPOINTMENT_NOT_FOUND", message)
 
-class AppointmentOverlapException(message: String) : RuntimeException(message)
+class AppointmentValidationException(message: String)
+    : AppointmentException("APPOINTMENT_VALIDATION_ERROR", message)
 
-class AppointmentInPastException(message: String) : RuntimeException(message)
+class AppointmentOverlapException(message: String)
+    : AppointmentException("APPOINTMENT_OVERLAP", message)
+
+class AppointmentInPastException(message: String)
+    : AppointmentException("APPOINTMENT_IN_PAST", message)

@@ -9,3 +9,6 @@ http://localhost:8080/swagger-ui/index.html
 om de testen te runnen: .\mvnw test 
 soms helpt het om de target te legen: .\mvnw clean test
 
+
+
+Companion object zijn static members
